@@ -1,0 +1,35 @@
+# --- Unreal build
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# --- IDE / local user files
+.vs/
+.vscode/
+.idea/
+.history/
+.vsconfig
+*.sln
+*.VC.db
+*.VC.opendb
+*.suo
+*.user
+*.rsuser
+
+# --- OS junk
+.DS_Store
+Thumbs.db
+
+# --- Crash/Log
+*.log
+*.dmp
+
+# --- Keep these (tracked project files)
+!Config/Default*.ini
+!Source/**/*
+!Content/**/*
+!Plugins/**/*
+!*.uproject
+!*.uplugin
+
