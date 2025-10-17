@@ -67,3 +67,10 @@ AWolfieCartSportsCar::AWolfieCartSportsCar()
 	GetChaosVehicleMovement()->SteeringSetup.SteeringType = ESteeringType::Ackermann;
 	GetChaosVehicleMovement()->SteeringSetup.AngleRatio = 0.7f;
 }
+
+void AWolfieCartSportsCar::UpdateMaxRPM(float newMax)
+{
+	GetChaosVehicleMovement()->EngineSetup.MaxRPM = newMax;
+	GetChaosVehicleMovement()->RecreatePhysicsState();
+
+}

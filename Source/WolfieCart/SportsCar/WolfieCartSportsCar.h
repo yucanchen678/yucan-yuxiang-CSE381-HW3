@@ -17,4 +17,10 @@ class AWolfieCartSportsCar : public AWolfieCartPawn
 public:
 
 	AWolfieCartSportsCar();
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
+	float CustomMaxRPM = 7000.0f;
+
+	UFUNCTION(BlueprintCallable)
+	void UpdateMaxRPM(float newMax);
 };
