@@ -18,9 +18,22 @@ public:
 
 	AWolfieCartSportsCar();
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
 	float CustomMaxRPM = 7000.0f;
 
 	UFUNCTION(BlueprintCallable)
 	void UpdateMaxRPM(float newMax);
+
+	void DoSpeedUp();
+
+	bool isSpeedDown = false;
+
+	void EndSpeedDown();
+
+	float SpeedDownTime = 5.0f;
+
+	FTimerHandle SpeedDownTimerHandle;
 };
