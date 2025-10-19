@@ -74,3 +74,31 @@ void AWolfieCartSportsCar::UpdateMaxRPM(float newMax)
 	GetChaosVehicleMovement()->RecreatePhysicsState();
 
 }
+
+
+void AWolfieCartSportsCar::DoSpeedUp()
+{
+	GetMesh()->AddImpulse(GetActorForwardVector() * 2000, NAME_None, true);
+
+}
+
+// Called every frame
+void AWolfieCartSportsCar::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (isSpeedDown)
+	{
+		if (GetChaosVehicleMovement()->GetForwardSpeedMPH() > 20)
+		{
+			GetChaosVehicleMovement()->SetThrottleInput(0.0f);
+			GetChaosVehicleMovement()->SetBrakeInput(1.0f);
+		}
+	}
+
+}
+
+void AWolfieCartSportsCar::EndSpeedDown()
+{
+	isSpeedDown = false;
+}
